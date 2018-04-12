@@ -1,0 +1,85 @@
+<!-- <div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
+      
+<form>
+  First name:<br>
+  <input type="text" name="firstname" value="">
+  <br>
+  Last name:<br>
+  <input type="text" name="lastname" value="">
+  <br>
+  email id:<br>
+  <input type="text" mail="mail-id" value="">
+  <br>
+  contact number:<br>
+  <input type="number" number="numbe" value="">
+  
+  <br><br>
+  <button class="btn btn-primary" type="submit" (click)='change'>submit</button>
+</form> 
+
+      </div>
+     </div>
+    </div> -->
+
+
+ <div>  
+      <form [formGroup]='signupForm' (ngSubmit)="PostData(signupForm)">  
+          <div class="form-container">  
+              <div class="row columns">  
+       <div>  
+        <input type="text" formControlName='fname' name='fname' id='fname' placeholder="Your First name">  
+      
+        <div *ngIf="signupForm.controls['fname'].touched && !signupForm.controls['fname'].valid">  
+            <span *ngIf="signupForm.controls['fname'].hasError('required') ">  
+                First name is required  
+                </span>  
+                <span *ngIf="signupForm.controls['fname'].hasError('minlength') ">  
+                 Min length is 1  
+                </span>  
+                <span *ngIf="signupForm.controls['fname'].hasError('maxlength') ">  
+                max length is 15  
+            </span>  
+        </div>  
+        </div>  
+        <div>  
+        <br>  
+        <input type="text" formControlName='lname' placeholder="Your Last name">  
+      
+        <div *ngIf="signupForm.controls['lname'].touched && !signupForm.controls['lname'].valid">  
+            <span *ngIf="signupForm.controls['lname'].hasError('required') ">  
+                Last name is required  
+                </span>  
+                <span *ngIf="signupForm.controls['lname'].hasError('minlength') ">  
+                 Min length is 1  
+                </span>  
+                <span *ngIf="signupForm.controls['lname'].hasError('maxlength') ">  
+                max length is 15  
+            </span>  
+        </div>  
+      </div>  
+        <br>  
+        <div><input type="text" formControlName='Emailid' placeholder="Your Email id"></div>  
+        <div *ngIf="signupForm.controls['Emailid'].touched && !signupForm.controls['Emailid'].valid">  
+            <span *ngIf="signupForm.controls['Emailid'].hasError('required') ">  
+               Email ID is needed  
+                 </span>  
+                
+          <span *ngIf="signupForm.controls['Emailid'].hasError('email') ">  
+               Invalid Email ID  
+                </span>  
+                           
+        </div>  
+        <br>  
+        <div>  
+        <input type="Password" formControlName='userpassword' placeholder="Your password">  
+      </div>  
+      <br>  
+      <div>  
+    <input type="Submit" value="Post Data"  >  
+      </div>  
+      </div>  
+      </div>  
+      </form>  
+    </div>  
